@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{86:function(a){a.exports=JSON.parse('{"allTagsPath":"/jest-preset-angular/blog/tags","slug":"facebook","name":"facebook","count":1,"permalink":"/jest-preset-angular/blog/tags/facebook"}')}}]);
