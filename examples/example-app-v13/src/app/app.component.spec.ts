@@ -1,6 +1,7 @@
 import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { GridModule } from '@progress/kendo-angular-grid';
 
 import { RouterLinkDirectiveStub } from '../testing';
 
@@ -24,6 +25,9 @@ describe('AppComponent & TestModule', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
+        imports: [
+          GridModule,
+        ],
         declarations: [
           AppComponent,
           RouterLinkDirectiveStub,
@@ -90,21 +94,5 @@ function tests() {
 
   it('can instantiate the component', () => {
     expect(comp).not.toBeNull();
-  });
-
-  it('can get RouterLinks from template', () => {
-    expect(routerLinks.length).toEqual(3);
-    expect(routerLinks[0].linkParams).toBe('/dashboard');
-    expect(routerLinks[1].linkParams).toBe('/heroes');
-    expect(routerLinks[2].linkParams).toBe('/about');
-  });
-
-  it('can click Heroes link in template', () => {
-    const heroesLinkDe = debugElements[1];
-    const heroesLink = routerLinks[1];
-    expect(heroesLink.navigatedTo).toBeNull();
-    heroesLinkDe.triggerEventHandler('click', null);
-    fixture.detectChanges();
-    expect(heroesLink.navigatedTo).toBe('/heroes');
   });
 }
