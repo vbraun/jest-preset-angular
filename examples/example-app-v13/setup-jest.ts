@@ -1,6 +1,7 @@
 // Can't use standard setup-jest, b/c it uses require()
 // import 'jest-preset-angular/setup-jest';
 
+import '@angular/localize/init';
 import 'zone.js/fesm2015/zone-testing-bundle.min.js';
 import './jest-global-mocks';
 
